@@ -26,13 +26,13 @@ vnets = [{
 ### AKS
 cluster_name            = "aks-acr-private"
 private_cluster_enabled = true
-kubernetes_version      = "1.23.15"
+kubernetes_version      = "1.24.10"
 network_plugin          = "kubenet"
 network_policy          = "calico"
 
 node_pools = [{
   name                   = "default"
-  orchestrator_version   = "1.23.15"
+  orchestrator_version   = "1.24.10"
   vm_size                = "Standard_B2ms"
   enable_host_encryption = true
   os_disk_size_gb        = null
@@ -55,7 +55,7 @@ node_pools = [{
 
 acr_name = "acrprivatetyz"
 acr_sku  = "Premium"
-acr_allowed_public_ips = ["20.12.61.190/32"] #"20.12.61.190/32"
+acr_allowed_public_ips = [] # Put your local machine IP if you need to access the Private ACR. (Ex: "xxx.xxx.xxx.xxx/32")
 
 vm_name = "jumpbox-vm"
 vm_size = "Standard_B2s"
